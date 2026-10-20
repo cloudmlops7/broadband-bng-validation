@@ -1,0 +1,16 @@
+# Example FreeRADIUS BNG client.
+# Copy to "clients.conf" and configure a local secret.
+#
+# Do not commit the real clients.conf file.
+
+client broadband-bng {
+    ipaddr = 172.30.0.2
+    secret = CHANGE_ME
+    require_message_authenticator = no
+}
+
+# NOTE:
+# require_message_authenticator = no is used only for this
+# isolated lab because the current Accel-PPP Access-Request
+# does not include Message-Authenticator.
+# Do not treat this as production security guidance.

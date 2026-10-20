@@ -1,0 +1,7 @@
+# Example FreeRADIUS subscriber credentials.
+# Copy to "authorize" and replace values for your local lab.
+#
+# Do not commit the real authorize file.
+
+user1 Cleartext-Password := "CHANGE_ME"
+user2 Cleartext-Password := "CHANGE_ME"

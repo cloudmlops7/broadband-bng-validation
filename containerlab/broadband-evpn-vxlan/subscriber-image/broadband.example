@@ -1,0 +1,23 @@
+plugin /usr/lib/pppd/2.4.9/pppoe.so
+
+# QinQ subscriber service interface:
+# outer S-VLAN 900 = 802.1ad
+# inner C-VLAN 900 = 802.1Q
+eth1.900.900
+
+pppoe-service broadband
+
+user "user1"
+password "CHANGE_ME"
+
+noauth
+noipdefault
+defaultroute
+usepeerdns
+
+persist
+maxfail 1
+holdoff 5
+
+debug
+nodetach

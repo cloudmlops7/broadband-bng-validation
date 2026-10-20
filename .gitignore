@@ -1,0 +1,70 @@
+# ==========================================================
+# Third-party source repositories
+# ==========================================================
+voltctl/
+voltha/voltha-helm-charts/
+bng/accel-ppp/src/
+
+# ==========================================================
+# Containerlab generated runtime state
+# ==========================================================
+**/clab-*/
+.clab/
+*.state.clab.yaml
+
+# ==========================================================
+# Runtime logs / captures / results
+# ==========================================================
+*.log
+*.pcap
+*.pcapng
+logs/
+results/raw/
+
+# ==========================================================
+# Backup / temporary files
+# ==========================================================
+*.bak
+*.tmp
+*.swp
+*~
+
+# ==========================================================
+# Credentials / local lab secrets
+# ==========================================================
+bng/radius/config/authorize
+bng/radius/config/clients.conf
+bng/accel-ppp/config/chap-secrets
+containerlab/broadband-evpn-vxlan/subscriber-image/broadband
+
+# ==========================================================
+# Python
+# ==========================================================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# ==========================================================
+# IDE / OS
+# ==========================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==========================================================
+# Local environment / secrets
+# ==========================================================
+.env
+.env.*
+*.secret
+*.secrets
+
+# Local Accel-PPP configuration contains RADIUS secret
+bng/accel-ppp/config/accel-ppp.conf
+
+# Experimental labs not part of current validated baseline
+containerlab/freertr-mpls-test/
+containerlab/vpls/

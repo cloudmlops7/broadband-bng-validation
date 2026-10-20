@@ -64,6 +64,25 @@ else
     exit 1
 fi
 
+echo
+echo "############################################################"
+echo "# PHASE 4: QinQ + IPoE / DHCP SUBSCRIBER SERVICE"
+echo "############################################################"
+echo
+
+# ----------------------------------------------------------
+# 4. QinQ / IPoE / DHCP subscriber service
+# ----------------------------------------------------------
+
+if ./validate_ipoe.sh; then
+    echo
+    echo "PHASE 4 RESULT: PASS"
+else
+    echo
+    echo "PHASE 4 RESULT: FAIL"
+    exit 1
+fi
+
 END_TIME=$(date +%s)
 DURATION=$((END_TIME - START_TIME))
 
@@ -83,11 +102,16 @@ echo "EAPOL        : SUCCESS"
 echo "DHCP         : ACK RECEIVED"
 echo "Transport    : EVPN/VXLAN"
 echo "VNI          : 10100"
-echo "Subscriber   : PPPoE"
-echo "AAA          : RADIUS"
-echo "Subscriber IP: 10.10.10.10"
-echo "BNG IP       : 10.10.10.1"
-echo "Packet Loss  : 0%"
+echo "PPPoE Service : S900 / C900"
+echo "AAA            : RADIUS"
+echo "PPPoE IP       : 10.10.10.10"
+echo "BNG IP         : 10.10.10.1"
+echo "PPPoE Loss     : 0%"
+echo "IPoE Service   : S900 / C901"
+echo "IPoE DHCP      : DORA validated"
+echo "IPoE IP        : 10.20.20.10"
+echo "IPoE Gateway   : 10.20.20.1"
+echo "IPoE Loss      : 0%"
 echo "Test Duration: ${DURATION}s"
 echo "============================================================"
 echo
